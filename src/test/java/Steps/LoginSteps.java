@@ -38,6 +38,7 @@ public class LoginSteps extends CommonMethods {
         //Send Wrong Username
         WebElement userNameField = driver.findElement(By.id("username"));
         sendText(userNameField, "test");
+        //Send Wrong Password
         WebElement passwordField = driver.findElement(By.id("password"));
         sendText(passwordField, "Test");
         WebElement loginBtn = driver.findElement(By.id("kc-login"));
