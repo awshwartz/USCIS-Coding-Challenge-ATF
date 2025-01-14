@@ -1,13 +1,7 @@
 Feature: Form Completion
-  @smoke
-  Scenario: Create Form I-999
+
+  Scenario: Create a new Form I-131 Form
     Given The user is logged in as an applicant
-    When The user clicks on Start new Form for an I999 Form
+    When The user starts an I131 form
     And The user fills out the form correctly
-    Then The user will have successfully completed a Form I999
-
-
-  Scenario: Access an existing I-131 Form
-    Given the user is authenticated
-    When accesses the account
-    Then the user should be able to navigate to an existing "incomplete" form I-131 if one exists
+    Then the user will have successfully completed a Form 131
