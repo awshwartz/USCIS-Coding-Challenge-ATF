@@ -14,14 +14,14 @@ public class LoginSteps extends CommonMethods {
     public void theUserIsOnTheMainLoginPage() throws InterruptedException {
         openBrowserAndLaunchApplication();
         //User clicks on login button on the main splash page
-        //WebElement login = driver.findElement(By.xpath("//*[@id=\"main-content\"]/section[1]/div/div[2]/button"));
-        click(loginPage.login);
+        WebElement login = driver.findElement(By.xpath("//*[@id=\"header\"]/header/div/nav/button[2]"));
+        click(login);
     }
     //CORRECT LOGIN INFORMATION
     @When("the user enters the correct login information")
     public void theUserEntersTheCorrectLoginInformation() throws InterruptedException {
-        //WebElement usernameField = driver.findElement(By.id("username"));
-        sendText(loginPage.usernameField, ConfigReader.getPropertyValue("usernameApplicant"));
+        WebElement usernameField = driver.findElement(By.id("username"));
+        sendText(usernameField, ConfigReader.getPropertyValue("usernameApplicant"));
         WebElement passwordField = driver.findElement(By.id("password"));
         sendText(passwordField, ConfigReader.getPropertyValue("passwordApplicant"));
         WebElement loginBtn = driver.findElement(By.id("kc-login"));
@@ -49,6 +49,7 @@ public class LoginSteps extends CommonMethods {
     @Then("the user will receive an error message and not be logged in")
     public void theUserWillReceiveAnErrorMessageAndNotBeLoggedIn() {
         takeScreenshot("incorrectLogin.jpg");
+        driver.quit();
     }
 
     @When("the admin enters the correct login information")
@@ -63,6 +64,8 @@ public class LoginSteps extends CommonMethods {
 
     @Then("the admin will be successfully logged in")
     public void theAdminWillBeSuccessfullyLoggedIn() {
+
         takeScreenshot("adminLogin.jpg");
+        driver.quit();
     }
 }

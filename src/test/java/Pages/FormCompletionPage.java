@@ -5,9 +5,9 @@ import org.openqa.selenium.support.PageFactory;
 import utils.CommonMethods;
 
 public class FormCompletionPage extends CommonMethods {
-    WebElement firstNameField = driver.findElement(By.id("persons[0].firstName"));
-    WebElement lastNameField = driver.findElement(By.id("persons[0].lastName"));
-    WebElement middleNameField = driver.findElement(By.id("persons[0].middleName"));
+    WebElement firstNameField = driver.findElement(By.name("givenName"));
+    WebElement lastNameField = driver.findElement(By.name("familyName"));
+    WebElement middleNameField = driver.findElement(By.name("middleName"));
     WebElement aNumberField = driver.findElement(By.id("aNumber"));
     WebElement countryField = driver.findElement(By.id("countryOfBirth"));
     WebElement nationalityField = driver.findElement(By.id("nationality"));

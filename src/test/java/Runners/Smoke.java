@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/",
         //glue is where we find implementations for gherkin steps
         //we provide the path of package where we defined all the steps
-        glue = "steps",
+       // glue = "src/test/java/Steps",
         //if we set it to true, it will quickly scan all gherkin steps whether they are implemented or not
         //if it is set to true, it stops actual execution
         //to execute script, it should be set to false
